@@ -63,11 +63,11 @@ export default class App extends React.Component{
         });
     }
     deleteNote = (id, e) => {
-    	// Avoiding bubble to edit
-    	e.stopPropagation();
+        // Avoiding bubble to edit
+        e.stopPropagation();
 
-    	this.setState({
-    		notes: this.state.notes.filter(note => note.id !== id)
-    	});
+        this.setState({
+            notes: this.state.notes.filter(note => note.id !== id)
+        });
     }
 }
