@@ -1,10 +1,10 @@
 import React from 'react';
 import uuid from 'uuid';
-import Notes from './Notes';
 import connect from '../libs/connect';
-import NoteActions from '../actions/NoteActions';
+import Lanes from './Lanes';
+import LaneActions from '../actions/LaneActions';
 
-class App extends React.Component{
+/*class App extends React.Component{
     
     render() {
         const {notes} = this.props;
@@ -45,10 +45,27 @@ class App extends React.Component{
 
         NoteActions.update({id, task, editing: false});
     }
-}
+}*/
+const App = ({LaneActions, lanes}) => {
+    const addLane = () => {
+        LaneActions.create({
+            id: uuid.v4(),
+            name: 'New Lane'
+        });
+    }
 
-export default connect(({notes}) => ({
-    notes
+    return (
+        <div>
+            <button className="add-lane" onClick={addLane}>+</button>
+            <Lanes lanes={lanes} />
+        </div>
+    );
+};
+
+
+
+export default connect(({lanes}) => ({
+    lanes
 }), {
-    NoteActions
+    LaneActions
 })(App)
