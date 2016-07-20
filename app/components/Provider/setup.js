@@ -5,5 +5,5 @@ import NoteStore from '../../stores/NoteStore';
 export default alt => {
 	alt.addStore('NoteStore', NoteStore);
 
-	persist(alt, storage(localStorage), app);
+	persist(alt, storage(localStorage), 'app');
 }
