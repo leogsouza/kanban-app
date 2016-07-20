@@ -33,9 +33,7 @@ class App extends React.Component{
         // Avoiding bubble to edit
         e.stopPropagation();
 
-        this.setState({
-            notes: this.state.notes.filter(note => note.id !== id)
-        });
+        this.props.NoteActions.delete(id);
     }
 
     activateNoteEdit = (id) => {
