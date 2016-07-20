@@ -32,4 +32,16 @@ export default class LaneStore {
 			})
 		});
 	}
+
+	detacheFromLane({laneId, noteId}) {
+		this.setState({
+			lanes: this.lanes.map(lane => {
+				if(lane.id === laneId) {
+					lane.notes = lane.notes.filter(note => note !== noteId);
+				}
+
+				return lane;
+			})
+		});
+	}
 }
