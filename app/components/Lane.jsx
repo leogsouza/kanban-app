@@ -32,7 +32,7 @@ const Lane = ({
 			<LaneHeader lane={lane} />
 			<Notes
 				notes={selectNotesByIds(notes, lane.notes)}
-				onNotesClick={activateNoteEdit}
+				onNoteClick={activateNoteEdit}
 				onEdit={editNote}
 				onDelete={deleteNote} />
 		</div>
